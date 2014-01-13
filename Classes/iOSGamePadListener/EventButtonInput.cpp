@@ -10,7 +10,7 @@
 
 namespace iOSGamePad {
     
-    EventButtonInput::EventButtonInput(ButtonCode buttonCode, bool isPressed, float value)
+    EventButtonInput::EventButtonInput(ButtonCode buttonCode, bool isPressed, float value) :EventCustom("__eventButtonInput")
     {
         _pressed = isPressed;
         _value = value;

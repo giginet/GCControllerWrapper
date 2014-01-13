@@ -10,11 +10,12 @@
 #define __iOSGamePad__ButtonInputEvent__
 
 #include "cocos2d.h"
+#include "EventListenerGamePad.h"
 
 using namespace cocos2d;
 
 namespace iOSGamePad {
-    class EventButtonInput
+    class EventButtonInput :public EventCustom
     {
     public:
         
@@ -40,6 +41,8 @@ namespace iOSGamePad {
     private:
         bool _pressed;
         float _value;
+        
+        friend class EventListenerGamePad;
     };
 }
 

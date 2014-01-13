@@ -72,6 +72,12 @@ bool HelloWorld::init()
     // add the sprite as a child to this layer
     this->addChild(sprite, 0);
     
+    auto dispathcer = EventDispatcher::getInstance();
+    EventListenerCustom *customListener = EventListenerCustom::create("test-event", [&](EventCustom *event) {
+        
+    });
+    dispathcer->addEventListenerWithSceneGraphPriority(customListener, this);
+    
     return true;
 }
 
@@ -79,7 +85,6 @@ bool HelloWorld::init()
 void HelloWorld::menuCloseCallback(Object* pSender)
 {
     Director::getInstance()->end();
-
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     exit(0);
 #endif

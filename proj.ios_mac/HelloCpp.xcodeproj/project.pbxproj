@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		074B41121883A67600B031FA /* EventButtonInput.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 074B41101883A67600B031FA /* EventButtonInput.cpp */; };
+		074B41151883B0DB00B031FA /* EventListenerGamePad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 074B41131883B0DB00B031FA /* EventListenerGamePad.cpp */; };
 		1ACB3244164770DE00914215 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ACB3243164770DE00914215 /* libcurl.a */; };
 		1AF4C2F417865DCB00122817 /* libbox2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF4C2E317865D9500122817 /* libbox2d iOS.a */; };
 		1AF4C2F517865DCB00122817 /* libchipmunk iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF4C2E117865D9500122817 /* libchipmunk iOS.a */; };
@@ -246,6 +247,8 @@
 /* Begin PBXFileReference section */
 		074B41101883A67600B031FA /* EventButtonInput.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EventButtonInput.cpp; path = ../Classes/iOSGamePadListener/EventButtonInput.cpp; sourceTree = "<group>"; };
 		074B41111883A67600B031FA /* EventButtonInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventButtonInput.h; path = ../Classes/iOSGamePadListener/EventButtonInput.h; sourceTree = "<group>"; };
+		074B41131883B0DB00B031FA /* EventListenerGamePad.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EventListenerGamePad.cpp; path = ../Classes/iOSGamePadListener/EventListenerGamePad.cpp; sourceTree = "<group>"; };
+		074B41141883B0DB00B031FA /* EventListenerGamePad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventListenerGamePad.h; path = ../Classes/iOSGamePadListener/EventListenerGamePad.h; sourceTree = "<group>"; };
 		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
 		1AF4C2BB17865D9500122817 /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = ../../../cocos2d_libs.xcodeproj; sourceTree = "<group>"; };
 		1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = ../Classes/AppDelegate.cpp; sourceTree = "<group>"; };
@@ -353,6 +356,8 @@
 			children = (
 				074B41101883A67600B031FA /* EventButtonInput.cpp */,
 				074B41111883A67600B031FA /* EventButtonInput.h */,
+				074B41131883B0DB00B031FA /* EventListenerGamePad.cpp */,
+				074B41141883B0DB00B031FA /* EventListenerGamePad.h */,
 			);
 			name = iOSGamePadListener;
 			sourceTree = "<group>";
@@ -738,6 +743,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				074B41151883B0DB00B031FA /* EventListenerGamePad.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
