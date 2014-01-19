@@ -85,9 +85,18 @@ bool HelloWorld::init()
         
     });
     
-    iOSGamePad::Controller::startWirelessControllerDiscoveryWithCompletionHandler([&] {
+    iOSGamePad::Controller::setControllerDidConnected([&] {
         Array* controllers = iOSGamePad::Controller::controllers();
         _labelTTF->setString(std::to_string(controllers->count()).c_str());
+        if (controllers->count() > 0) {
+            iOSGamePad::Controller* controller = dynamic_cast<iOSGamePad::Controller *>(controllers->getObjectAtIndex(0));
+            controller->setOnValueChangedHandler([&] (iOSGamePad::EventButtonInput *input) {
+                _labelTTF->setString("Changed!!!");
+            });
+            controller->setControllerPausedHandler([&] (iOSGamePad::Controller *controller) {
+                _labelTTF->setString("Paused!!!");
+            });
+        }
     });
     
     dispathcer->addEventListenerWithSceneGraphPriority(customListener, this);

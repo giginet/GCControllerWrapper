@@ -18,15 +18,16 @@ struct iOSGamePad::Controller::GCControllerStruct {
 
 iOSGamePad::Controller::Controller()
 {
+    _controllerWrapper = std::shared_ptr<GCControllerStruct>(new GCControllerStruct());
 }
 
 Array* iOSGamePad::Controller::controllers()
 {
     NSArray *controllers = [GCController controllers];
     auto array = Array::create();
-    array->retain();
     for (int i = 0; i < [controllers count]; ++i) {
         auto controller = new iOSGamePad::Controller();
+        controller->autorelease();
         controller->_controllerWrapper->controller = controllers[i];
         array->addObject(controller);
     }
@@ -84,6 +85,28 @@ void iOSGamePad::Controller::setControllerPausedHandler(std::function<void (Cont
     _controllerWrapper->controller.controllerPausedHandler = ^(GCController *controller) {
         handler(this);
     };
+}
+
+void iOSGamePad::Controller::setControllerDidConnected(std::function<void ()> handler)
+{
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserverForName:GCControllerDidConnectNotification
+                        object:nil
+                         queue:[NSOperationQueue mainQueue]
+                    usingBlock:^(NSNotification *note) {
+                        handler();
+                    }];
+}
+
+void iOSGamePad::Controller::setControllerDidDisconnected(std::function<void ()> handler)
+{
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserverForName:GCControllerDidDisconnectNotification
+                        object:nil
+                         queue:[NSOperationQueue mainQueue]
+                    usingBlock:^(NSNotification *note) {
+                        handler();
+                    }];
 }
 
 

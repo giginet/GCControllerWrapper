@@ -25,6 +25,9 @@ namespace iOSGamePad {
         static void startWirelessControllerDiscoveryWithCompletionHandler(std::function<void (void)> completionHandler);
         static void stopWirelessControllerDiscovery();
         
+        static void setControllerDidConnected(std::function<void (void)> handler);
+        static void setControllerDidDisconnected(std::function<void (void)> handler);
+        
         std::function<void (EventButtonInput *event)> getOnValueChangedHandler();
         void setOnValueChangedHandler(std::function<void (EventButtonInput *event) >handler);
         std::function<void (Controller *controller)> getControllerPausedHandler();
