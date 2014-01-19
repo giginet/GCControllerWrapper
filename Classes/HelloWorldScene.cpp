@@ -1,4 +1,5 @@
 #include "HelloWorldScene.h"
+#include "GCController.h"
 
 USING_NS_CC;
 
@@ -62,6 +63,13 @@ bool HelloWorld::init()
 
     // add the label as a child to this layer
     this->addChild(label, 1);
+    
+    auto count = LabelTTF::create("0", "Helvetica", 32);
+    count->retain();
+    _labelTTF = count;
+    _labelTTF->setPosition(Point(200, 200));
+    _labelTTF->setColor(Color3B::RED);
+    this->addChild(_labelTTF);
 
     // add "HelloWorld" splash screen"
     auto sprite = Sprite::create("HelloWorld.png");
@@ -76,9 +84,20 @@ bool HelloWorld::init()
     EventListenerCustom *customListener = EventListenerCustom::create("test-event", [&](EventCustom *event) {
         
     });
+    
+    iOSGamePad::Controller::startWirelessControllerDiscoveryWithCompletionHandler([&] {
+        Array* controllers = iOSGamePad::Controller::controllers();
+        _labelTTF->setString(std::to_string(controllers->count()).c_str());
+    });
+    
     dispathcer->addEventListenerWithSceneGraphPriority(customListener, this);
     
     return true;
+}
+
+HelloWorld::~HelloWorld()
+{
+    _labelTTF->release();
 }
 
 
