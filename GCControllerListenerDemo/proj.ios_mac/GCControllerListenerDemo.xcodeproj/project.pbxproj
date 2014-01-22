@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		079A08E9189029900027993A /* EventButtonInput.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 079A08E1189029900027993A /* EventButtonInput.cpp */; };
+		079A08EA189029900027993A /* EventListenerGamePad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 079A08E3189029900027993A /* EventListenerGamePad.cpp */; };
+		079A08EB189029900027993A /* GamePad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 079A08E5189029900027993A /* GamePad.cpp */; };
+		079A08EC189029900027993A /* Controller.mm in Sources */ = {isa = PBXBuildFile; fileRef = 079A08E8189029900027993A /* Controller.mm */; };
 		1AC6FB1F180E996B004C840B /* libbox2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAFF180E9839004C840B /* libbox2d Mac.a */; };
 		1AC6FB20180E996B004C840B /* libchipmunk Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAFD180E9839004C840B /* libchipmunk Mac.a */; };
 		1AC6FB21180E996B004C840B /* libcocos2dx Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAF9180E9839004C840B /* libcocos2dx Mac.a */; };
@@ -243,6 +247,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		079A08E1189029900027993A /* EventButtonInput.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EventButtonInput.cpp; sourceTree = "<group>"; };
+		079A08E2189029900027993A /* EventButtonInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventButtonInput.h; sourceTree = "<group>"; };
+		079A08E3189029900027993A /* EventListenerGamePad.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EventListenerGamePad.cpp; sourceTree = "<group>"; };
+		079A08E4189029900027993A /* EventListenerGamePad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListenerGamePad.h; sourceTree = "<group>"; };
+		079A08E5189029900027993A /* GamePad.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GamePad.cpp; sourceTree = "<group>"; };
+		079A08E6189029900027993A /* GamePad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePad.h; sourceTree = "<group>"; };
+		079A08E7189029900027993A /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
+		079A08E8189029900027993A /* Controller.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Controller.mm; sourceTree = "<group>"; };
 		1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = ../cocos2d/build/cocos2d_libs.xcodeproj; sourceTree = "<group>"; };
 		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
 		1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = ../Classes/AppDelegate.cpp; sourceTree = "<group>"; };
@@ -346,6 +358,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		079A08E0189029900027993A /* GCControllerListener */ = {
+			isa = PBXGroup;
+			children = (
+				079A08E1189029900027993A /* EventButtonInput.cpp */,
+				079A08E2189029900027993A /* EventButtonInput.h */,
+				079A08E3189029900027993A /* EventListenerGamePad.cpp */,
+				079A08E4189029900027993A /* EventListenerGamePad.h */,
+				079A08E5189029900027993A /* GamePad.cpp */,
+				079A08E6189029900027993A /* GamePad.h */,
+				079A08E7189029900027993A /* Controller.h */,
+				079A08E8189029900027993A /* Controller.mm */,
+			);
+			name = GCControllerListener;
+			path = ../../GCControllerListener;
+			sourceTree = "<group>";
+		};
 		080E96DDFE201D6D7F000001 /* ios */ = {
 			isa = PBXGroup;
 			children = (
@@ -364,6 +392,7 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				079A08E0189029900027993A /* GCControllerListener */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
 				1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */,
@@ -727,9 +756,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				079A08EC189029900027993A /* Controller.mm in Sources */,
+				079A08EA189029900027993A /* EventListenerGamePad.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				079A08EB189029900027993A /* GamePad.cpp in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
+				079A08E9189029900027993A /* EventButtonInput.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				1AFAF8B816D35DE700DB1158 /* HelloWorldScene.cpp in Sources */,
 			);
