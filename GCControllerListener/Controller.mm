@@ -6,11 +6,8 @@
 //
 //
 
-#include "GCController.h"
-#include "cocos2d.h"
+#include "Controller.h"
 #import <GameController/GameController.h>
-
-
 
 struct iOSGamePad::Controller::GCControllerStruct {
     GCController *controller;
@@ -21,17 +18,16 @@ iOSGamePad::Controller::Controller()
     _controllerWrapper = std::shared_ptr<GCControllerStruct>(new GCControllerStruct());
 }
 
-Array* iOSGamePad::Controller::controllers()
+std::vector<iOSGamePad::Controller *> iOSGamePad::Controller::controllers()
 {
     NSArray *controllers = [GCController controllers];
-    auto array = Array::create();
+    std::vector<Controller *> vector;
     for (int i = 0; i < [controllers count]; ++i) {
         auto controller = new iOSGamePad::Controller();
-        controller->autorelease();
         controller->_controllerWrapper->controller = controllers[i];
-        array->addObject(controller);
+        vector.push_back(controller);
     }
-    return array;
+    return vector;
 }
 
 void iOSGamePad::Controller::startWirelessControllerDiscoveryWithCompletionHandler(std::function<void ()> completionHandler)

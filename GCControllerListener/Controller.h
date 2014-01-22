@@ -9,19 +9,18 @@
 #ifndef __HelloCpp__GCController__
 #define __HelloCpp__GCController__
 
-#include "cocos2d.h"
 #include "EventButtonInput.h"
 
 using namespace cocos2d;
 
 namespace iOSGamePad {
-    class Controller :public Object
+    class Controller
     {
       public:
         
         struct GCControllerStruct;
         
-        static Array *controllers();
+        static std::vector<Controller *> controllers();
         static void startWirelessControllerDiscoveryWithCompletionHandler(std::function<void (void)> completionHandler);
         static void stopWirelessControllerDiscovery();
         

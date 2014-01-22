@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		079A08E9189029900027993A /* EventButtonInput.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 079A08E1189029900027993A /* EventButtonInput.cpp */; };
 		079A08EA189029900027993A /* EventListenerGamePad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 079A08E3189029900027993A /* EventListenerGamePad.cpp */; };
-		079A08EB189029900027993A /* GamePad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 079A08E5189029900027993A /* GamePad.cpp */; };
+		079A08EB189029900027993A /* Gamepad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 079A08E5189029900027993A /* Gamepad.cpp */; };
 		079A08EC189029900027993A /* Controller.mm in Sources */ = {isa = PBXBuildFile; fileRef = 079A08E8189029900027993A /* Controller.mm */; };
 		1AC6FB1F180E996B004C840B /* libbox2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAFF180E9839004C840B /* libbox2d Mac.a */; };
 		1AC6FB20180E996B004C840B /* libchipmunk Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAFD180E9839004C840B /* libchipmunk Mac.a */; };
@@ -251,8 +251,8 @@
 		079A08E2189029900027993A /* EventButtonInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventButtonInput.h; sourceTree = "<group>"; };
 		079A08E3189029900027993A /* EventListenerGamePad.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EventListenerGamePad.cpp; sourceTree = "<group>"; };
 		079A08E4189029900027993A /* EventListenerGamePad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListenerGamePad.h; sourceTree = "<group>"; };
-		079A08E5189029900027993A /* GamePad.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GamePad.cpp; sourceTree = "<group>"; };
-		079A08E6189029900027993A /* GamePad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePad.h; sourceTree = "<group>"; };
+		079A08E5189029900027993A /* Gamepad.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Gamepad.cpp; sourceTree = "<group>"; };
+		079A08E6189029900027993A /* Gamepad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gamepad.h; sourceTree = "<group>"; };
 		079A08E7189029900027993A /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
 		079A08E8189029900027993A /* Controller.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Controller.mm; sourceTree = "<group>"; };
 		1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = ../cocos2d/build/cocos2d_libs.xcodeproj; sourceTree = "<group>"; };
@@ -365,8 +365,8 @@
 				079A08E2189029900027993A /* EventButtonInput.h */,
 				079A08E3189029900027993A /* EventListenerGamePad.cpp */,
 				079A08E4189029900027993A /* EventListenerGamePad.h */,
-				079A08E5189029900027993A /* GamePad.cpp */,
-				079A08E6189029900027993A /* GamePad.h */,
+				079A08E5189029900027993A /* Gamepad.cpp */,
+				079A08E6189029900027993A /* Gamepad.h */,
 				079A08E7189029900027993A /* Controller.h */,
 				079A08E8189029900027993A /* Controller.mm */,
 			);
@@ -580,7 +580,7 @@
 				LastUpgradeCheck = 0500;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
-						DevelopmentTeam = MDDB52YB8L;
+						DevelopmentTeam = 2AWR7Z4WYE;
 					};
 				};
 			};
@@ -760,7 +760,7 @@
 				079A08EA189029900027993A /* EventListenerGamePad.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
-				079A08EB189029900027993A /* GamePad.cpp in Sources */,
+				079A08EB189029900027993A /* Gamepad.cpp in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				079A08E9189029900027993A /* EventButtonInput.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
@@ -839,6 +839,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -859,6 +860,7 @@
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
@@ -870,6 +872,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -888,6 +891,7 @@
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";

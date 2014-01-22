@@ -9,6 +9,12 @@
 #ifndef __HelloCpp__GamePad__
 #define __HelloCpp__GamePad__
 
-#include <iostream>
+namespace iOSGamePad {
+    class Gamepad {
+        
+        
+        
+    };
+}
 
 #endif /* defined(__HelloCpp__GamePad__) */
