@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		079A08E9189029900027993A /* EventButtonInput.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 079A08E1189029900027993A /* EventButtonInput.cpp */; };
-		079A08EA189029900027993A /* EventListenerGamePad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 079A08E3189029900027993A /* EventListenerGamePad.cpp */; };
 		079A08EB189029900027993A /* Gamepad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 079A08E5189029900027993A /* Gamepad.cpp */; };
 		079A08EC189029900027993A /* Controller.mm in Sources */ = {isa = PBXBuildFile; fileRef = 079A08E8189029900027993A /* Controller.mm */; };
+		079A08F518902CF40027993A /* ControllerElement.mm in Sources */ = {isa = PBXBuildFile; fileRef = 079A08F318902CF40027993A /* ControllerElement.mm */; };
+		079A08F7189031080027993A /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079A08F6189031080027993A /* GameController.framework */; };
 		1AC6FB1F180E996B004C840B /* libbox2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAFF180E9839004C840B /* libbox2d Mac.a */; };
 		1AC6FB20180E996B004C840B /* libchipmunk Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAFD180E9839004C840B /* libchipmunk Mac.a */; };
 		1AC6FB21180E996B004C840B /* libcocos2dx Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAF9180E9839004C840B /* libcocos2dx Mac.a */; };
@@ -247,14 +247,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		079A08E1189029900027993A /* EventButtonInput.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EventButtonInput.cpp; sourceTree = "<group>"; };
-		079A08E2189029900027993A /* EventButtonInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventButtonInput.h; sourceTree = "<group>"; };
-		079A08E3189029900027993A /* EventListenerGamePad.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EventListenerGamePad.cpp; sourceTree = "<group>"; };
-		079A08E4189029900027993A /* EventListenerGamePad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListenerGamePad.h; sourceTree = "<group>"; };
 		079A08E5189029900027993A /* Gamepad.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Gamepad.cpp; sourceTree = "<group>"; };
 		079A08E6189029900027993A /* Gamepad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gamepad.h; sourceTree = "<group>"; };
 		079A08E7189029900027993A /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
 		079A08E8189029900027993A /* Controller.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Controller.mm; sourceTree = "<group>"; };
+		079A08F318902CF40027993A /* ControllerElement.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ControllerElement.mm; sourceTree = "<group>"; };
+		079A08F418902CF40027993A /* ControllerElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControllerElement.h; sourceTree = "<group>"; };
+		079A08F6189031080027993A /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
 		1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = ../cocos2d/build/cocos2d_libs.xcodeproj; sourceTree = "<group>"; };
 		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
 		1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = ../Classes/AppDelegate.cpp; sourceTree = "<group>"; };
@@ -314,6 +313,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				079A08F7189031080027993A /* GameController.framework in Frameworks */,
 				1AC6FB2E180E99EB004C840B /* libbox2d iOS.a in Frameworks */,
 				1AC6FB2F180E99EB004C840B /* libchipmunk iOS.a in Frameworks */,
 				1AC6FB30180E99EB004C840B /* libcocos2dx iOS.a in Frameworks */,
@@ -361,14 +361,12 @@
 		079A08E0189029900027993A /* GCControllerListener */ = {
 			isa = PBXGroup;
 			children = (
-				079A08E1189029900027993A /* EventButtonInput.cpp */,
-				079A08E2189029900027993A /* EventButtonInput.h */,
-				079A08E3189029900027993A /* EventListenerGamePad.cpp */,
-				079A08E4189029900027993A /* EventListenerGamePad.h */,
 				079A08E5189029900027993A /* Gamepad.cpp */,
 				079A08E6189029900027993A /* Gamepad.h */,
 				079A08E7189029900027993A /* Controller.h */,
 				079A08E8189029900027993A /* Controller.mm */,
+				079A08F318902CF40027993A /* ControllerElement.mm */,
+				079A08F418902CF40027993A /* ControllerElement.h */,
 			);
 			name = GCControllerListener;
 			path = ../../GCControllerListener;
@@ -449,6 +447,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				079A08F6189031080027993A /* GameController.framework */,
 				D6B0611A1803AB670077942B /* CoreMotion.framework */,
 				503AE11A17EB9C5A00D1A890 /* IOKit.framework */,
 				503AE11117EB99EE00D1A890 /* libcurl.dylib */,
@@ -757,12 +756,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				079A08EC189029900027993A /* Controller.mm in Sources */,
-				079A08EA189029900027993A /* EventListenerGamePad.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				079A08EB189029900027993A /* Gamepad.cpp in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
-				079A08E9189029900027993A /* EventButtonInput.cpp in Sources */,
+				079A08F518902CF40027993A /* ControllerElement.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				1AFAF8B816D35DE700DB1158 /* HelloWorldScene.cpp in Sources */,
 			);

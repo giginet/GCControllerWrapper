@@ -23,7 +23,7 @@ namespace iOSGamePad {
         static EventListenerCustom* create(const std::string& eventName, std::function<void(EventCustom*)> callback);
         
         /// Overrides
-        virtual bool checkAvaiable() override;
+        //virtual bool checkAvaiable() override;
         virtual EventListenerCustom* clone() override;
         
     protected:

@@ -11,8 +11,6 @@
 
 #include "EventButtonInput.h"
 
-using namespace cocos2d;
-
 namespace iOSGamePad {
     class Controller
     {
