@@ -21,7 +21,7 @@ namespace iOSGamePad {
     
     Gamepad::Gamepad()
     {
-        _gamepadWrapper = new GCGamepadStruct();
+        _gamepadWrapper = std::shared_ptr<GCGamepadStruct>(new GCGamepadStruct());
     }
 
     Controller* Gamepad::getController()
