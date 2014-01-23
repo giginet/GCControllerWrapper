@@ -12,6 +12,9 @@
 #include "Controller.h"
 
 namespace iOSGamePad {
+    
+    class Gamepad;
+    
     class ControllerElement {
         
     public:
@@ -26,6 +29,7 @@ namespace iOSGamePad {
         ControllerElement();
         ControllerElement* _collection;
         std::shared_ptr<GCControllerElementStruct> _elementWrapper;
+        friend class Gamepad;
     };
     
     class ControllerAxisInput :public ControllerElement {

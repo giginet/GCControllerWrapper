@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		079A08EB189029900027993A /* Gamepad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 079A08E5189029900027993A /* Gamepad.cpp */; };
+		079A08EB189029900027993A /* Gamepad.mm in Sources */ = {isa = PBXBuildFile; fileRef = 079A08E5189029900027993A /* Gamepad.mm */; };
 		079A08EC189029900027993A /* Controller.mm in Sources */ = {isa = PBXBuildFile; fileRef = 079A08E8189029900027993A /* Controller.mm */; };
 		079A08F518902CF40027993A /* ControllerElement.mm in Sources */ = {isa = PBXBuildFile; fileRef = 079A08F318902CF40027993A /* ControllerElement.mm */; };
 		079A08F7189031080027993A /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079A08F6189031080027993A /* GameController.framework */; };
@@ -247,7 +247,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		079A08E5189029900027993A /* Gamepad.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Gamepad.cpp; sourceTree = "<group>"; };
+		079A08E5189029900027993A /* Gamepad.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Gamepad.mm; sourceTree = "<group>"; };
 		079A08E6189029900027993A /* Gamepad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gamepad.h; sourceTree = "<group>"; };
 		079A08E7189029900027993A /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
 		079A08E8189029900027993A /* Controller.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Controller.mm; sourceTree = "<group>"; };
@@ -361,7 +361,7 @@
 		079A08E0189029900027993A /* GCControllerListener */ = {
 			isa = PBXGroup;
 			children = (
-				079A08E5189029900027993A /* Gamepad.cpp */,
+				079A08E5189029900027993A /* Gamepad.mm */,
 				079A08E6189029900027993A /* Gamepad.h */,
 				079A08E7189029900027993A /* Controller.h */,
 				079A08E8189029900027993A /* Controller.mm */,
@@ -758,7 +758,7 @@
 				079A08EC189029900027993A /* Controller.mm in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
-				079A08EB189029900027993A /* Gamepad.cpp in Sources */,
+				079A08EB189029900027993A /* Gamepad.mm in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				079A08F518902CF40027993A /* ControllerElement.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
