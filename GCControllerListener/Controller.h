@@ -9,9 +9,12 @@
 #ifndef __HelloCpp__GCController__
 #define __HelloCpp__GCController__
 
-#include "EventButtonInput.h"
+#include "cocos2d.h"
 
 namespace iOSGamePad {
+    
+    class Gamepad;
+    
     class Controller
     {
       public:
@@ -25,19 +28,17 @@ namespace iOSGamePad {
         static void setControllerDidConnected(std::function<void (void)> handler);
         static void setControllerDidDisconnected(std::function<void (void)> handler);
         
-        std::function<void (EventButtonInput *event)> getOnValueChangedHandler();
-        void setOnValueChangedHandler(std::function<void (EventButtonInput *event) >handler);
-        std::function<void (Controller *controller)> getControllerPausedHandler();
         void setControllerPausedHandler(std::function<void (Controller *controller) >handler);
         
         bool isAttachedToDevice();
         const char* getVendorName();
         int getPlayerIndex();
+        
+        Gamepad* getGamepad();
       
       private:
         Controller();
         
-        std::function<void (EventButtonInput *event)> _onValueChangedHandler;
         std::function<void (Controller *controller) > _controllerPausedHandler;
         std::shared_ptr<GCControllerStruct> _controllerWrapper;
     };
