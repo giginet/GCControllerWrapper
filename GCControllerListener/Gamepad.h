@@ -9,7 +9,6 @@
 #ifndef __HelloCpp__GamePad__
 #define __HelloCpp__GamePad__
 
-#include "cocos2d.h"
 #include "ControllerElement.h"
 
 namespace iOSGamePad {
