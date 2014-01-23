@@ -14,16 +14,15 @@
 namespace iOSGamePad {
     class ControllerElement {
         
-        struct GCControllerElementStruct;
-        
     public:
+        struct GCControllerElementStruct;
         virtual bool isAnalog();
         
         virtual ControllerElement* getCollection() {
             return _collection;
         }
     
-    private:
+    protected:
         ControllerElement();
         ControllerElement* _collection;
         std::shared_ptr<GCControllerElementStruct> _elementWrapper;
@@ -31,26 +30,27 @@ namespace iOSGamePad {
     
     class ControllerAxisInput :public ControllerElement {
     public:
-        bool isAnalog() override;
-        ControllerElement* getCollection() override;
+        float getValue();
+        void setValueChangedHandler(std::function<void (ControllerAxisInput *axis, float value)> valueChangedHandler);
+        friend class ControllerDirectionPad;
+    private:
+        std::function<void (ControllerAxisInput *axis, float value)> _valueChangedHandler;
     };
     
     class ControllerButtonInput :public ControllerElement {
     public:
-        ControllerElement* getCollection() override;
         bool isPressed();
         float getValue();
         void setValueChangedHandler(std::function< void (ControllerButtonInput* button, float value, bool pressed) > valueChangedHandler);
+        friend class ControllerDirectionPad;
     private:
         std::function<void (ControllerButtonInput *button, float value, bool pressed)> _valueChangedHandler;
     };
     
     class ControllerDirectionPad :public ControllerElement {
     public:
-        bool isAnalog() override;
-        
-        float getXAxis();
-        float getYAxis();
+        ControllerAxisInput* getXAxis();
+        ControllerAxisInput* getYAxis();
         ControllerButtonInput* getUp();
         ControllerButtonInput* getDown();
         ControllerButtonInput* getLeft();
