@@ -36,7 +36,7 @@ namespace iOSGamePad {
         ControllerDirectionPad* getDpad();
     private:
         Gamepad();
-        Controller* _controller;
+        Controller* _controller; // weak
         std::shared_ptr<GCGamepadStruct> _gamepadWrapper;
         std::function<void (Gamepad *gamePad, ControllerElement *element)> _valueChangedHandler;
         friend class Controller;

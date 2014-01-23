@@ -11,6 +11,9 @@
 #import <GameController/GameController.h>
 
 namespace iOSGamePad {
+    
+    std::shared_ptr< std::vector<Controller *> > Controller::_controllers = NULL;
+    
     struct Controller::GCControllerStruct {
         GCController *controller;
     };
@@ -21,19 +24,22 @@ namespace iOSGamePad {
     
     Controller::Controller()
     {
+        _controllers = NULL;
         _controllerWrapper = std::shared_ptr<GCControllerStruct>(new GCControllerStruct());
     }
     
-    std::vector<Controller *> Controller::controllers()
+    std::vector<Controller *>* Controller::controllers()
     {
-        NSArray *controllers = [GCController controllers];
-        std::vector<Controller *> vector;
-        for (int i = 0; i < [controllers count]; ++i) {
-            auto controller = new Controller();
-            controller->_controllerWrapper->controller = controllers[i];
-            vector.push_back(controller);
+        if (_controllers == NULL || _controllers->size() == 0) {
+            NSArray *controllers = [GCController controllers];
+            _controllers = std::shared_ptr< std::vector<Controller *> >(new std::vector<Controller *>());
+            for (int i = 0; i < [controllers count]; ++i) {
+                auto controller = new Controller();
+                controller->_controllerWrapper->controller = controllers[i];
+                _controllers->push_back(controller);
+            }
         }
-        return vector;
+        return _controllers.get();
     }
     
     void Controller::startWirelessControllerDiscoveryWithCompletionHandler(std::function<void ()> completionHandler)
@@ -97,6 +103,7 @@ namespace iOSGamePad {
     {
         auto gamepad = new Gamepad();
         gamepad->_gamepadWrapper->gamepad = [_controllerWrapper->controller gamepad];
+        gamepad->_controller = this;
         return gamepad;
     }
     

@@ -22,7 +22,7 @@ namespace iOSGamePad {
         
         struct GCControllerStruct;
         
-        static std::vector<Controller *> controllers();
+        static std::vector<Controller *>* controllers();
         static void startWirelessControllerDiscoveryWithCompletionHandler(std::function<void (void)> completionHandler);
         static void stopWirelessControllerDiscovery();
         
@@ -39,7 +39,7 @@ namespace iOSGamePad {
       
       private:
         Controller();
-        
+        static std::shared_ptr< std::vector<Controller *> > _controllers;
         std::function<void (Controller *controller) > _controllerPausedHandler;
         std::shared_ptr<GCControllerStruct> _controllerWrapper;
     };
