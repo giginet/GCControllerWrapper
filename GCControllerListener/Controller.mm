@@ -6,8 +6,9 @@
 //
 //
 
-#include "Controller.h"
+#include "ControllerElement.h"
 #include "Gamepad.h"
+#include "Controller.h"
 #import <GameController/GameController.h>
 
 namespace iOSGamePad {
@@ -24,12 +25,19 @@ namespace iOSGamePad {
     
     Controller::Controller()
     {
-        _controllers = NULL;
         _controllerWrapper = std::shared_ptr<GCControllerStruct>(new GCControllerStruct());
     }
     
     std::vector<Controller *>* Controller::controllers()
     {
+        // ToDo fix after
+        NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+        [center addObserverForName:GCControllerDidDisconnectNotification
+                            object:nil
+                             queue:[NSOperationQueue mainQueue]
+                        usingBlock:^(NSNotification *note) {
+                            _controllers = NULL;
+                        }];
         if (_controllers == NULL || _controllers->size() == 0) {
             NSArray *controllers = [GCController controllers];
             _controllers = std::shared_ptr< std::vector<Controller *> >(new std::vector<Controller *>());
@@ -79,11 +87,13 @@ namespace iOSGamePad {
     
     void Controller::setControllerDidConnected(std::function<void ()> handler)
     {
+        // ToDo save returned observer
         NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
         [center addObserverForName:GCControllerDidConnectNotification
                             object:nil
                              queue:[NSOperationQueue mainQueue]
                         usingBlock:^(NSNotification *note) {
+                            _controllers = NULL;
                             if (handler) handler();
                         }];
     }
@@ -95,6 +105,7 @@ namespace iOSGamePad {
                             object:nil
                              queue:[NSOperationQueue mainQueue]
                         usingBlock:^(NSNotification *note) {
+                            _controllers = NULL;
                             if (handler) handler();
                         }];
     }

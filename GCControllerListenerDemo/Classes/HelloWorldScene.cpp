@@ -1,4 +1,7 @@
 #include "HelloWorldScene.h"
+#include "Controller.h"
+#include "ControllerElement.h"
+#include "Gamepad.h"
 
 USING_NS_CC;
 
@@ -59,7 +62,16 @@ bool HelloWorld::init()
     // position the label on the center of the screen
     label->setPosition(Point(origin.x + visibleSize.width/2,
                             origin.y + visibleSize.height - label->getContentSize().height));
-
+    
+    auto xAxis = LabelTTF::create("", "Arial", 24);
+    xAxis->retain();
+    _xAxisLabel = std::shared_ptr<LabelTTF>(xAxis);
+    _xAxisLabel->setPosition(Point(300, 300));
+    auto yAxis = LabelTTF::create("", "Arial", 24);
+    yAxis->retain();
+    _yAxisLabel = std::shared_ptr<LabelTTF>(yAxis);
+    _yAxisLabel->setPosition(Point(300, 270));
+    
     // add the label as a child to this layer
     this->addChild(label, 1);
 
@@ -71,8 +83,27 @@ bool HelloWorld::init()
 
     // add the sprite as a child to this layer
     this->addChild(sprite, 0);
+    this->addChild(_xAxisLabel.get());
+    this->addChild(_yAxisLabel.get());
+
+    this->scheduleUpdate();
     
     return true;
+}
+
+void HelloWorld::update(float dt)
+{
+    auto controllers = iOSGamePad::Controller::controllers();
+    if (controllers->size() > 0) {
+        iOSGamePad::Controller* controller = controllers->at(0);
+        float x = controller->getGamepad()->getDpad()->getXAxis()->getValue();
+        float y = controller->getGamepad()->getDpad()->getYAxis()->getValue();
+        _xAxisLabel->setString(std::to_string(x));
+        _yAxisLabel->setString(std::to_string(y));
+    } else {
+        _xAxisLabel->setString("0");
+        _yAxisLabel->setString("0");
+    }
 }
 
 

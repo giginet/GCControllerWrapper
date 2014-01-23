@@ -15,6 +15,11 @@ public:
     // a selector callback
     void menuCloseCallback(Object* pSender);
     
+    void update(float dt) override;
+    
+    std::shared_ptr<cocos2d::LabelTTF> _xAxisLabel;
+    std::shared_ptr<cocos2d::LabelTTF> _yAxisLabel;
+    
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);
 };

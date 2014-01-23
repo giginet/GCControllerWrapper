@@ -7,6 +7,8 @@
 //
 
 #include "ControllerElement.h"
+#include "Gamepad.h"
+#include "Controller.h"
 #include <GameController/GameController.h>
 
 namespace iOSGamePad {
