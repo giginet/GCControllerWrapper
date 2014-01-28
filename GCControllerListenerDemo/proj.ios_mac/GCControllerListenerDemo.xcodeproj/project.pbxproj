@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		079A08EB189029900027993A /* Gamepad.mm in Sources */ = {isa = PBXBuildFile; fileRef = 079A08E5189029900027993A /* Gamepad.mm */; };
-		079A08EC189029900027993A /* Controller.mm in Sources */ = {isa = PBXBuildFile; fileRef = 079A08E8189029900027993A /* Controller.mm */; };
-		079A08F518902CF40027993A /* ControllerElement.mm in Sources */ = {isa = PBXBuildFile; fileRef = 079A08F318902CF40027993A /* ControllerElement.mm */; };
+		071243B01897F458007CB741 /* Controller.mm in Sources */ = {isa = PBXBuildFile; fileRef = 071243AB1897F458007CB741 /* Controller.mm */; };
+		071243B11897F458007CB741 /* ControllerElement.mm in Sources */ = {isa = PBXBuildFile; fileRef = 071243AD1897F458007CB741 /* ControllerElement.mm */; };
+		071243B21897F458007CB741 /* Gamepad.mm in Sources */ = {isa = PBXBuildFile; fileRef = 071243AF1897F458007CB741 /* Gamepad.mm */; };
 		079A08F7189031080027993A /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079A08F6189031080027993A /* GameController.framework */; };
 		1AC6FB1F180E996B004C840B /* libbox2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAFF180E9839004C840B /* libbox2d Mac.a */; };
 		1AC6FB20180E996B004C840B /* libchipmunk Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAFD180E9839004C840B /* libchipmunk Mac.a */; };
@@ -247,12 +247,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		079A08E5189029900027993A /* Gamepad.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Gamepad.mm; sourceTree = "<group>"; };
-		079A08E6189029900027993A /* Gamepad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gamepad.h; sourceTree = "<group>"; };
-		079A08E7189029900027993A /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
-		079A08E8189029900027993A /* Controller.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Controller.mm; sourceTree = "<group>"; };
-		079A08F318902CF40027993A /* ControllerElement.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ControllerElement.mm; sourceTree = "<group>"; };
-		079A08F418902CF40027993A /* ControllerElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControllerElement.h; sourceTree = "<group>"; };
+		071243AA1897F458007CB741 /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
+		071243AB1897F458007CB741 /* Controller.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Controller.mm; sourceTree = "<group>"; };
+		071243AC1897F458007CB741 /* ControllerElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControllerElement.h; sourceTree = "<group>"; };
+		071243AD1897F458007CB741 /* ControllerElement.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ControllerElement.mm; sourceTree = "<group>"; };
+		071243AE1897F458007CB741 /* Gamepad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gamepad.h; sourceTree = "<group>"; };
+		071243AF1897F458007CB741 /* Gamepad.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Gamepad.mm; sourceTree = "<group>"; };
 		079A08F6189031080027993A /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
 		1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = ../cocos2d/build/cocos2d_libs.xcodeproj; sourceTree = "<group>"; };
 		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
@@ -358,18 +358,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		079A08E0189029900027993A /* GCControllerListener */ = {
+		071243A91897F458007CB741 /* GCController */ = {
 			isa = PBXGroup;
 			children = (
-				079A08E5189029900027993A /* Gamepad.mm */,
-				079A08E6189029900027993A /* Gamepad.h */,
-				079A08E7189029900027993A /* Controller.h */,
-				079A08E8189029900027993A /* Controller.mm */,
-				079A08F318902CF40027993A /* ControllerElement.mm */,
-				079A08F418902CF40027993A /* ControllerElement.h */,
+				071243AA1897F458007CB741 /* Controller.h */,
+				071243AB1897F458007CB741 /* Controller.mm */,
+				071243AC1897F458007CB741 /* ControllerElement.h */,
+				071243AD1897F458007CB741 /* ControllerElement.mm */,
+				071243AE1897F458007CB741 /* Gamepad.h */,
+				071243AF1897F458007CB741 /* Gamepad.mm */,
 			);
-			name = GCControllerListener;
-			path = ../../GCControllerListener;
+			name = GCController;
+			path = ../../GCController;
 			sourceTree = "<group>";
 		};
 		080E96DDFE201D6D7F000001 /* ios */ = {
@@ -390,7 +390,7 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				079A08E0189029900027993A /* GCControllerListener */,
+				071243A91897F458007CB741 /* GCController */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
 				1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */,
@@ -755,14 +755,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				079A08EC189029900027993A /* Controller.mm in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				071243B21897F458007CB741 /* Gamepad.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
-				079A08EB189029900027993A /* Gamepad.mm in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
-				079A08F518902CF40027993A /* ControllerElement.mm in Sources */,
+				071243B11897F458007CB741 /* ControllerElement.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				1AFAF8B816D35DE700DB1158 /* HelloWorldScene.cpp in Sources */,
+				071243B01897F458007CB741 /* Controller.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
