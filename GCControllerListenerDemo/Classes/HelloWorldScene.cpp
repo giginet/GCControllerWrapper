@@ -96,6 +96,9 @@ void HelloWorld::update(float dt)
     auto controllers = iOSGamePad::Controller::controllers();
     if (controllers->size() > 0) {
         iOSGamePad::Controller* controller = controllers->at(0);
+        controller->getGamepad()->getButtonA()->setValueChangedHandler([&](iOSGamePad::ControllerButtonInput *, float, bool) {
+            std::cout << "press button A!!!" << std::endl;
+        });
         float x = controller->getGamepad()->getDpad()->getXAxis()->getValue();
         float y = controller->getGamepad()->getDpad()->getYAxis()->getValue();
         _xAxisLabel->setString(std::to_string(x));
